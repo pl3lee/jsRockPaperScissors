@@ -1,0 +1,33 @@
+* {
+    border: solid red;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.computer-container {
+    display: flex;
+    height: 50vh;
+}
+
+.player-container {
+    display: flex;
+    justify-content: space-evenly;
+    height: 50vh;
+    align-items: flex-end;
+    padding-bottom: 10vh;
+}
+.gestures {
+    padding: 150px;
+    width: 20%;
+    height: 50%;
+    display: flex;
+}
+
+#rock-button {
+    height: 100px;
+    width: auto;
+}

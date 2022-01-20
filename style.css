@@ -1,33 +1,94 @@
 * {
-    border: solid red;
+    /* border: solid red; */
 }
 
+.everything-container {
+    display: flex;
+    background-color: rgb(104, 172, 235);
+}
+.score-container {
+    width: 10%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+}
+.score-number {
+    display: flex;
+    height: 50vh;
+    font-size: 50px;
+    flex-direction: column;
+}
+.score-text {
+    font-size: 40px;
+    font-weight: bolder;
+}
+#computer.score-number {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
 .main-container {
+    width: 90%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
-
+.game-txt-container {
+    height: 20vh;
+}
 .computer-container {
     display: flex;
-    height: 50vh;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-container {
     display: flex;
     justify-content: space-evenly;
-    height: 50vh;
+    height: 40vh;
     align-items: flex-end;
     padding-bottom: 10vh;
 }
-.gestures {
-    padding: 150px;
-    width: 20%;
-    height: 50%;
+.gesture-button {
+    padding: 5px;
+    width: 100px;
+    height: 100px;
     display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    border: solid lightgrey;
+    border-radius: 10px;
+    background-color: lightgrey;
+    border-style: outset;
+    
 }
 
-#rock-button {
+.button-image {
     height: 100px;
-    width: auto;
+    width: 100px;
+    transition: all 0.1s ease;
+}
+
+.clicked {
+    transform: scale(0.9);
+}
+
+.computer-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.computer-image {
+    height: 40vh;
+}
+.game-txt-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: bold;
 }

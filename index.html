@@ -9,12 +9,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-container">
-        <div class="computer-container">hi</div>
-        <div class="player-container">
-            <button class="gestures" id="rock"><img id="rock-button" src="./images/rock.png" alt="rock"></button>
-            <button class="gestures" id="paper">Paper</button>
-            <button class="gestures" id="scissors">Scissors</button>
+    <div class="everything-container">
+        <div class="score-container">
+            <div class="score-number" id="computer">
+                <div>0</div>
+            </div>
+            <div class="score-text">SCORE</div>
+            <div class="score-number" id="player">
+                <div>0</div>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="computer-container">
+                <div class="computer-image-container">
+                    <img class="computer-image" src="./images/walrus.png" alt="walrus">
+                </div>
+            </div>
+            <div class="game-txt-container"></div>
+            <div class="player-container">
+                <div class="gesture-button" id="rock"><img class="button-image" id="rock-button" src="./images/rock.png" alt="rock"></div>
+                <div class="gesture-button" id="paper"><img class="button-image" id="paper-button" src="./images/paper.png" alt="paper"></div>
+                <div class="gesture-button" id="scissors"><img class="button-image" id="scissors-button" src="./images/scissors.png" alt="scissors"></div>
+            </div>
         </div>
     </div>
 </body>

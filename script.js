@@ -69,3 +69,16 @@ function game() {
         console.log("The computer won!");
     }
 }
+
+function clicked(e) {
+    // console.log(e);
+    e.target.classList.add("clicked");
+}
+function removeClicked(e) {
+    e.target.classList.remove("clicked");
+}
+const buttons = Array.from(document.querySelectorAll('.button-image'));
+buttons.forEach(button => button.addEventListener('click', clicked));
+buttons.forEach(button => button.addEventListener('transitionend', removeClicked));
+const gameTextContainer = document.querySelector('.game-txt-container');
+gameTextContainer.textContent = 'Hello!';

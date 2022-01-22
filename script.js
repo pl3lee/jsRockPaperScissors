@@ -50,8 +50,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
+    
     for (let ctr = 0; ctr < 5; ctr++) {
         playerSelection = prompt(`Round ${ctr + 1}! Rock, paper, or scissors?`)
         result = playRound(playerSelection, computerPlay());
@@ -61,13 +60,7 @@ function game() {
             playerScore++;
         }
     }
-    if (playerScore == computerScore) {
-        console.log("We have a draw!");
-    } else if (playerScore > computerScore) {
-        console.log("You won!");
-    } else {
-        console.log("The computer won!");
-    }
+    
 }
 
 function clicked(e) {
@@ -77,8 +70,60 @@ function clicked(e) {
 function removeClicked(e) {
     e.target.classList.remove("clicked");
 }
+
+function displayIntroduction(textContainer) {
+    let texts = ["You are going to play Rock Paper Scissors with this Walrus!", "You are going to play for 5 games.", "Good luck!"];
+    for (let i = 0; i < texts.length; i++) {
+        setTimeout(function() {
+            textContainer.textContent = texts[i];
+        }, 3000)
+    }
+}
+
 const buttons = Array.from(document.querySelectorAll('.button-image'));
 buttons.forEach(button => button.addEventListener('click', clicked));
 buttons.forEach(button => button.addEventListener('transitionend', removeClicked));
 const gameTextContainer = document.querySelector('.game-txt-container');
-gameTextContainer.textContent = 'Hello!';
+const startButton = document.createElement('button');
+startButton.textContent = 'Start!'
+startButton.style.cssText = 'height: 100px; width: 200px; font-size: 50px; font-weight: bold; background-color: lightblue;'
+gameTextContainer.appendChild(startButton);
+startButton.addEventListener('click', function() {
+    startButton.remove();
+    displayIntroduction(gameTextContainer);
+});
+
+let playerScore = 0;
+let computerScore = 0;
+buttons.forEach(button => button.addEventListener('click', function(e) {
+    console.log(e.target.id);
+    let playerChoice = "None";
+    if (e.target.id == "paper-button") {
+        playerChoice = "paper";
+    } else if (e.target.id == "rock-button") {
+        playerChoice = "rock";
+    } else {
+        playerChoice = "scissors";
+    }
+    let result = playRound(playerChoice, computerPlay());
+    if (result == "c") {
+        computerScore++;
+    } else if (result == "p") {
+        playerScore++;
+    }
+
+    if ((playerScore == computerScore) && (playerScore == 5)) {
+        console.log("Game finished, we have a draw!");
+    } else if (playerScore > computerScore) {
+        console.log("Game finished, you won!");
+    } else {
+        console.log("Game finished, the computer won!");
+    }
+}));
+
+
+// gameTextContainer.textContent = 'Hello!';
+// setTimeout(function(){
+//     gameTextContainer.textContent = 'World!';
+// }, 2000)
+

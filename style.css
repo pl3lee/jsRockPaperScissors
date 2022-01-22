@@ -37,10 +37,13 @@
 }
 .game-txt-container {
     height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .computer-container {
     display: flex;
-    height: 40vh;
+    height: 50vh;
     justify-content: center;
     align-items: center;
 }

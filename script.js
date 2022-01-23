@@ -80,6 +80,12 @@ function displayIntroduction(textContainer) {
     }
 }
 
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+}
+let playerScore = 0;
+let computerScore = 0;
 const buttons = Array.from(document.querySelectorAll('.button-image'));
 buttons.forEach(button => button.addEventListener('click', clicked));
 buttons.forEach(button => button.addEventListener('transitionend', removeClicked));
@@ -93,8 +99,7 @@ startButton.addEventListener('click', function() {
     displayIntroduction(gameTextContainer);
 });
 
-let playerScore = 0;
-let computerScore = 0;
+
 buttons.forEach(button => button.addEventListener('click', function(e) {
     console.log(e.target.id);
     let playerChoice = "None";
@@ -111,14 +116,20 @@ buttons.forEach(button => button.addEventListener('click', function(e) {
     } else if (result == "p") {
         playerScore++;
     }
-
-    if ((playerScore == computerScore) && (playerScore == 5)) {
-        console.log("Game finished, we have a draw!");
-    } else if (playerScore > computerScore) {
-        console.log("Game finished, you won!");
-    } else {
-        console.log("Game finished, the computer won!");
+    if ((playerScore == 5) || (computerScore == 5)) {
+        if (playerScore == computerScore) {
+            console.log("Game finished, we have a draw!");
+        } else if (playerScore > computerScore) {
+            console.log("Game finished, you won!");
+        } else {
+            console.log("Game finished, the computer won!");
+        }
+        resetScore();
     }
+    let playerScoreText = document.querySelector('#player.score-number');
+    playerScoreText.textContent = playerScore;
+    let computerScoreText = document.querySelector('#computer.score-number');
+    computerScoreText.textContent = computerScore;
 }));
 
 

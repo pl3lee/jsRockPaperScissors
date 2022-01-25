@@ -1,5 +1,7 @@
 # About This Project
 ![image](https://user-images.githubusercontent.com/64212628/151054852-c9e7e23f-a5d8-469a-bf51-8f8a1d2e3e27.png)
+Try it out: https://pl3lee.github.io/jsRockPaperScissors/
+
 This is my first webpage created using HTML, CSS, and JavaScript. It is literally a Rock Paper Scissors game.
 # Built With
 - HTML
